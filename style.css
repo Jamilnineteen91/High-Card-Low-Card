@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Kaushan Script', cursive;  
+    font-size: 48px;
+    text-align: center;
+    position: relative;
+}
+
+div{
+    display:block;
+}
+
+.wrapper{
+    position: absolute;
+    width:1000px;
+    top: 160px;
+    left: 15%;
+}
+
+.player-panel{
+    width: 50%;
+    height: 600px;
+    float: left;
+}
+
+.player-name{
+    padding: 20px 20px;
+}
+
+.player-score{
+    font-family: 'Abel', sans-serif;
+    font-weight: 100;
+    color: 	#0080ff;
+    padding: 20px 20px;
+}
+
+#player-0{
+    background-color:  #f1f1f1;
+}
+
+#player-1{
+    background-color:#f7f7f7;
+}
+
+
