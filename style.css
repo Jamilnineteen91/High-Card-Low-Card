@@ -48,10 +48,11 @@ div{
     background-color:#f7f7f7;
 }
 
-button{
+/* button{
     position: absolute;
     width:200px;
-    z-index: 1;
-}
+    text-transform:uppercase;
+    display: inline-block;
+} */
 
 
