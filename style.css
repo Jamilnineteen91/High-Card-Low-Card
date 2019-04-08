@@ -11,6 +11,11 @@ body{
     position: relative;
 }
 
+img{
+    z-index: 1;
+    top: 50px;
+}
+
 .wrapper{
     display: inline-block;
     width:1000px;
@@ -23,6 +28,7 @@ body{
     width: 50%;
     height: 600px;
     float: left;
+    text-align: center;
 }
 
 .player-name{
@@ -42,6 +48,13 @@ body{
 
 #player-1{
     background-color:#f7f7f7;
+}
+
+.card{
+    height: 200px;
+    width: 150px;
+    border: 5px solid black;
+    display: inline-block; 
 }
 
 .btn{
