@@ -23,16 +23,20 @@ function init () {
 document.getElementById('btn-new').addEventListener('click',init);
 
 document.getElementById('btn-shuffle').addEventListener('click',function(){
-    // 1. Random number
+    // 1. Reset player title
+    document.getElementById("player-title-0").textContent="Player 1";
+    document.getElementById("player-title-1").textContent="AI";
+    
+    // 2. Random number
     userNumber=Math.floor(Math.random()*13)+1;
 
-    // 2.Display result
+    // 3.Display result
     if (shuffleLimit!=0){
         user_card=document.getElementById("#player-card-0");
         user_card.src='card-'+userNumber+'.png';
     }
 
-    // 3. Update shuffle limit
+    // 4. Update shuffle limit
     shuffleLimit-=1;
 
 });
