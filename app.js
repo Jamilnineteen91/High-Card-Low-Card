@@ -13,16 +13,16 @@ function init () {
     document.getElementById("player-title-0").textContent="Player 1";
     document.getElementById("player-title-1").textContent="AI";
 
-    user_card=document.getElementById("#player-card-0");
-    card.src='card_back.png';
-    ai_card=document.getElementById("#player-card-1");
-    card.src='card_back.png';
+    user_card=document.getElementById("player-card-0");
+    user_card.src='img/PNG/card_back.png';
+    ai_card=document.getElementById("player-card-1");
+    user_card.src='img/PNG/card_back.png';
 };
 
 
-document.getElementById('btn-new').addEventListener('click',init);
+document.querySelector('#btn-new').addEventListener('click',init());
 
-document.getElementById('btn-shuffle').addEventListener('click',function(){
+document.querySelector('#btn-shuffle').addEventListener('click',function(){
     // 1. Reset player title
     document.getElementById("player-title-0").textContent="Player 1";
     document.getElementById("player-title-1").textContent="AI";
@@ -31,9 +31,9 @@ document.getElementById('btn-shuffle').addEventListener('click',function(){
     userNumber=Math.floor(Math.random()*13)+1;
 
     // 3.Display result
-    if (shuffleLimit!=0){
-        user_card=document.getElementById("#player-card-0");
-        user_card.src='card-'+userNumber+'.png';
+    if (shuffleLimit!==0){
+        user_card=document.getElementById("player-card-0");
+        user_card.src='img/PNG/card-'+userNumber+'.png';
     }
 
     // 4. Update shuffle limit
@@ -44,10 +44,11 @@ document.getElementById('btn-shuffle').addEventListener('click',function(){
 function hold (){
     //  1. Ai random number
     aiNumber=Math.floor(Math.random()*13)+1;
+    console.log(aiNumber);
 
     // 2. Display results
-    ai_card=document.getElementById("#player-card-1");
-    ai_card.src='card-'+aiNumber+'.png';
+    ai_card=document.getElementById("player-card-1");
+    ai_card.src='img/PNG/card-'+1+'.png';
 
     // 3. Compare results
     if (userNumber>aiNumber){
@@ -66,4 +67,4 @@ function hold (){
 
 }
 
-document.getElementById('btn-hold').addEventListener('click',hold);
+document.getElementById('btn-hold').addEventListener('click',hold());
