@@ -1,4 +1,4 @@
-alert("Welcome to High Card/Low Card!\n- Players randomly select cards from a deck.\n- User has 3 chances to select/hold card.\n- In the case of a draw, a sudden death match will take place where both players each draw 1 card, a comparison will take place again.\n- Player with the highest card wins the round.\n- Both cards are then put back into the deck.\n- The game continues until deck is empty.\n- First player to 5 wins!");
+alert("Welcome to High Card/Low Card!\n- Players randomly select cards from a deck.\n- User has 3 chances to select/hold card.\n- Player with the highest card wins the round.\n- In the case of a draw, the process will repeat itself until the highest card is determined.\n- Both cards are then put back into the deck.\n- First player to 5 wins!");
 
 var userScore, aiScore, user_card, ai_card,userNumber,aiNumber, shuffleLimit,highScore;
 
@@ -8,6 +8,7 @@ userScore=0;
 aiScore=0;
 document.getElementById("btn-hold").disabled=true;
 
+// Init
 document.querySelector('#btn-new').addEventListener('click',()=>{
     // 1. Reset JS scores & shuffle limit.
     shuffleLimit=3;
@@ -54,6 +55,7 @@ document.querySelector('#btn-shuffle').addEventListener('click',()=>{
 
         // 5. Enable Hold button
         document.getElementById("btn-hold").disabled=false;
+    
     }else if(userScore==highScore){
         document.getElementById("player-title-0").textContent="Champion!!!!!!";
         document.getElementById("btn-shuffle").disabled=true;
@@ -66,7 +68,8 @@ document.querySelector('#btn-shuffle').addEventListener('click',()=>{
 });
 
 
-document.getElementById('btn-hold').addEventListener('click',()=>{
+// Hold
+function hold (){
     if (userScore!=highScore && aiScore!=highScore){
         //  1. Ai random number
         aiNumber=Math.floor(Math.random()*13)+1;
@@ -87,10 +90,6 @@ document.getElementById('btn-hold').addEventListener('click',()=>{
             document.getElementById("player-title-1").textContent="Winner!!!!!";
             document.querySelector("#score-1").textContent=aiScore;    
         }
-        else{
-            aiNumber=Math.floor(Math.random()*13)+1;
-            hold(); 
-        }
         shuffleLimit=3;
         document.getElementById("btn-hold").disabled=true;
     }else if(userScore==highScore){
@@ -102,4 +101,6 @@ document.getElementById('btn-hold').addEventListener('click',()=>{
         document.getElementById("btn-shuffle").disabled=true;
         document.getElementById("btn-hold").disabled=true;
     }
-});
+}
+
+document.getElementById('btn-hold').addEventListener('click',hold);
