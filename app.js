@@ -1,5 +1,8 @@
+
+// Rules prompt
 alert("Welcome to High Card/Low Card!\n- Players randomly select cards from a deck.\n- User has 3 chances to select/hold card.\n- Player with the highest card wins the round.\n- In the case of a draw, the process will repeat itself until the highest card is determined.\n- Both cards are then put back into the deck.\n- First player to 5 wins!");
 
+// Default
 var userScore, aiScore, user_card, ai_card,userNumber,aiNumber, shuffleLimit,highScore;
 
 highScore=5;
@@ -31,6 +34,7 @@ document.querySelector('#btn-new').addEventListener('click',()=>{
     document.getElementById("btn-shuffle").disabled=false;
 });
 
+// Shuffle
 document.querySelector('#btn-shuffle').addEventListener('click',()=>{
     
     if (userScore!=highScore && aiScore!=highScore){
