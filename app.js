@@ -1,3 +1,5 @@
+
+
 var userScore, aiScore, user_card, ai_card,userNumber,aiNumber, shuffleLimit,highScore;
 
 highScore=5;
@@ -6,27 +8,29 @@ userScore=0;
 aiScore=0;
 document.getElementById("btn-hold").disabled=true;
 
-function init () {
+document.querySelector('#btn-new').addEventListener('click',()=>{
+    // 1. Reset JS scores & shuffle limit.
     shuffleLimit=3;
     userScore=0;
     aiScore=0;
+
+    // 2. Reset HTML scores & texts.
     document.querySelector("#score-0").textContent=userScore;
     document.querySelector("#score-1").textContent=aiScore;
     document.getElementById("player-title-0").textContent="Player 1";
     document.getElementById("player-title-1").textContent="AI";
 
+    // 3. Concile all users' cards.
     user_card=document.getElementById("player-card-0");
     user_card.src='img/PNG/card_back.png';
     ai_card=document.getElementById("player-card-1");
     ai_card.src='img/PNG/card_back.png';
 
+    // 4. Ensure shuffle button is enabled.
     document.getElementById("btn-shuffle").disabled=false;
-};
+});
 
-
-document.querySelector('#btn-new').addEventListener('click',init);
-
-document.querySelector('#btn-shuffle').addEventListener('click',function(){
+document.querySelector('#btn-shuffle').addEventListener('click',()=>{
     
     if (userScore!=highScore && aiScore!=highScore){
         // 1. Reset player title and ai card
@@ -61,8 +65,8 @@ document.querySelector('#btn-shuffle').addEventListener('click',function(){
     }
 });
 
-function hold (){
 
+document.getElementById('btn-hold').addEventListener('click',()=>{
     if (userScore!=highScore && aiScore!=highScore){
         //  1. Ai random number
         aiNumber=Math.floor(Math.random()*13)+1;
@@ -98,6 +102,4 @@ function hold (){
         document.getElementById("btn-shuffle").disabled=true;
         document.getElementById("btn-hold").disabled=true;
     }
-}
-
-document.getElementById('btn-hold').addEventListener('click',hold);
+});
