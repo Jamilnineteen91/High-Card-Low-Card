@@ -4,6 +4,7 @@ highScore=5;
 shuffleLimit=3;
 userScore=0;
 aiScore=0;
+document.getElementById("btn-hold").disabled=true;
 
 function init () {
     shuffleLimit=3;
@@ -43,6 +44,9 @@ document.querySelector('#btn-shuffle').addEventListener('click',function(){
     // 4. Update shuffle limit
     shuffleLimit-=1;
 
+    // 5. Enable Hold button
+    document.getElementById("btn-hold").disabled=false;
+
 });
 
 function hold (){
@@ -61,21 +65,29 @@ function hold (){
         document.getElementById("player-title-0").textContent="Winner!!!!!";
         document.querySelector("#score-0").textContent=userScore;
 
-    }else if (userNumber<aiNumber){
+    }
+    else if (userNumber<aiNumber){
         aiScore+=1;
         document.getElementById("player-title-1").textContent="Winner!!!!!";
         document.querySelector("#score-1").textContent=aiScore;    
-    }else{
+    }
+    else{
         aiNumber=Math.floor(Math.random()*13)+1;
         hold(); 
     }
     shuffleLimit=3;
+    document.getElementById("btn-hold").disabled=true;
 }
 
 document.getElementById('btn-hold').addEventListener('click',hold);
 
-if (userScore==highScore){
+if(userScore===highScore){
     document.getElementById("player-title-0").textContent="Champion!!!!!!";
-}else if (aiScore==highScore){
+    document.getElementById("btn-shuffle").disabled=true;
+    document.getElementById("btn-hold").disabled=true;
+}
+else if(aiScore===highScore){
     document.getElementById("player-title-1").textContent="Champion!!!!!!";
+    document.getElementById("btn-shuffle").disabled=true;
+    document.getElementById("btn-hold").disabled=true;
 }
