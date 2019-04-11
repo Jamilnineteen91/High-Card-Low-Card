@@ -1,4 +1,4 @@
-
+alert("Welcome to High Card/Low Card!\n- Players randomly select cards from a deck.\n- User has 3 chances to select/hold card.\n- In the case of a draw, a sudden death match will take place where both players each draw 1 card, a comparison will take place again.\n- Player with the highest card wins the round.\n- Both cards are then put back into the deck.\n- The game continues until deck is empty.\n- First player to 5 wins!");
 
 var userScore, aiScore, user_card, ai_card,userNumber,aiNumber, shuffleLimit,highScore;
 
