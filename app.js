@@ -20,7 +20,7 @@ function init () {
 };
 
 
-document.querySelector('#btn-new').addEventListener('click',init());
+document.querySelector('#btn-new').addEventListener('click',init);
 
 document.querySelector('#btn-shuffle').addEventListener('click',function(){
     // 1. Reset player title
@@ -31,7 +31,7 @@ document.querySelector('#btn-shuffle').addEventListener('click',function(){
     userNumber=Math.floor(Math.random()*13)+1;
 
     // 3.Display result
-    if (shuffleLimit!==0){
+    if (shuffleLimit>0){
         user_card=document.getElementById("player-card-0");
         user_card.src='img/PNG/card-'+userNumber+'.png';
     }
@@ -44,11 +44,10 @@ document.querySelector('#btn-shuffle').addEventListener('click',function(){
 function hold (){
     //  1. Ai random number
     aiNumber=Math.floor(Math.random()*13)+1;
-    console.log(aiNumber);
 
     // 2. Display results
     ai_card=document.getElementById("player-card-1");
-    ai_card.src='img/PNG/card-'+1+'.png';
+    ai_card.src='img/PNG/card-'+aiNumber+'.png';
 
     // 3. Compare results
     if (userNumber>aiNumber){
@@ -67,4 +66,4 @@ function hold (){
 
 }
 
-document.getElementById('btn-hold').addEventListener('click',hold());
+document.getElementById('btn-hold').addEventListener('click',hold);
