@@ -5,6 +5,7 @@
 - User's held card is then compared to computers card.
 - In the case of a draw, the process will repeat itself until the highest card is determined. 
 - Player with the highest card wins the round. 
-- Both cards are then put back into the deck. 
+- Both cards are then put back into the deck.
+- Aces are low! 
 - First player to 5 wins!
 
