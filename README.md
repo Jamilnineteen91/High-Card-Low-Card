@@ -1,3 +1,4 @@
+http://g.recordit.co/I0PsC5LmPO.gif
 # Rules
 - Players randomly select cards from a deck. 
 - User has 3 chances to select/hold card. 
